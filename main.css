@@ -1,0 +1,242 @@
+body, html {
+    margin: 0; /* ลบระยะขอบเริ่มต้นของบราวเซอร์ */
+    padding: 0; /* ลบระยะห่างภายในเริ่มต้นของบราวเซอร์ */
+    font-family: 'Kanit', Tahoma, sans-serif; /* กำหนดฟอนต์หลักเป็น Kanit */
+    background-color: #1b1d1a; /* สีพื้นหลังเว็บโดยรวม (สีเทาอ่อน) */
+    color: #656565; /* สีตัวอักษรเริ่มต้น */
+    font-size: 14px; /* ขนาดตัวอักษรเริ่มต้น */
+}
+
+/* 'a' คือการกำหนดค่าให้ลิงก์ทั้งหมด */
+a {
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    color: inherit; /* ให้สีลิงก์เป็นสีเดียวกับตัวอักษรปกติ (ตามแม่) */
+}
+
+/* === Main Layout Container === */
+/* '.container' คือคลาสหลักที่ใช้ "จำกัดความกว้าง" และ "จัดเนื้อหาให้อยู่กลางจอ" */
+.container {
+    width: 960px; /* ความกว้างคงที่ของเนื้อหา (เหมือนในต้นฉบับ) */
+    margin: 0 auto; /* '0 auto' คือ trick ในการจัดกล่องให้อยู่กลางจอแนวนอน */
+}
+
+
+/* === 1. Header (ส่วนหัว) === */
+
+/* 'header-wrapper' ใช้กำหนดพื้นหลังสีขาวเต็มความกว้างจอ */
+.header-wrapper {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd; /* เส้นคั่นบางๆ ข้างล่าง */
+    padding: 5px 0; /* เว้นระยะห่าง บน-ล่าง */
+    
+}
+
+/* 'header' ที่อยู่ใน .container */
+.header {
+    display: flex; /* จัดเรียงโลโก้และชื่อแผนกในแนวนอน */
+    justify-content: space-between; /* ให้โลโก้อยู่ซ้ายสุด และชื่อแผนกอยู่ขวาสุด */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+}
+
+.logo-area {
+    display: flex; /* จัดเรียงโลโก้กับชื่อวิทยาลัยในแนวนอน */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+}
+
+.logo-img {
+    height: 80px; /* ปรับขนาดโลโก้ */
+    margin-right: 15px; /* เว้นระยะห่างด้านขวา */
+}
+
+.college-title {
+    display: flex;
+    flex-direction: column; /* จัดชื่อวิทยาลัย ไทย/อังกฤษ ให้อยู่ในแนวตั้ง */
+}
+
+.college-name-th {
+    font-weight: 600; /* ตัวหนา */
+    font-size: 16px;
+    color: #000;
+}
+
+.college-name-en {
+    font-size: 14px;
+    color: #555;
+}
+
+.department-title {
+    text-align: right; /* จัดข้อความชิดขวา */
+}
+
+.dept-name-en {
+    display: block; /* ขึ้นบรรทัดใหม่ */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.dept-name-th {
+    display: block; /* ขึ้นบรรทัดใหม่ */
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* === 2. Main Nav (แถบนำทางหลัก - สีน้ำเงิน) === */
+
+/* 'nav-main-wrapper' ใช้กำหนดพื้นหลังสีน้ำเงินเต็มความกว้างจอ */
+.nav-main-wrapper {
+    background-color: #3196fb; /* สีน้ำเงินแถบบน */
+    color: rgb(255, 255, 255);
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between; /* จัด 'หน้าหลัก' ไปซ้าย, 'ติดต่อ' ไปขวา */
+    padding: 10px 0; /* เว้นระยะห่าง บน-ล่าง (ในไฟล์ต้นฉบับคือ 10px 20px) */
+    font-weight: 500;
+}
+
+.nav-main a {
+    color: rgb(245, 245, 245);
+    padding: 5px 10px;
+}
+/* ':hover' คือเอฟเฟกต์เมื่อเอาเมาส์ไปชี้ */
+.nav-main a:hover {
+    background-color: #4778aa; /* สีเข้มขึ้น */
+    border-radius: 4px;
+}
+
+
+        /* --- Page Title Area --- */
+        .page-title-area {
+            background-color: #f5f5dc; /* Beige/Cream color for the title band */
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .page-title-area h2 {
+            margin: 0;
+            color: #800000; /* Dark Red for the title */
+            font-size: 1.8em;
+            font-weight: 900;
+        }
+
+        /* --- Main Content (Personnel Grid) --- */
+        .content-area {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* Applying the faded background image effect */
+            background-image: url('placeholder-background.jpg'); /* Replace with the actual URL/path to the faded building background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* To ensure the content is readable over the image */
+            position: relative;
+        }
+
+        /* A light overlay to simulate the faded/washed-out look of the background image */
+        .content-area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7); /* White overlay with 70% opacity */
+            z-index: 1;
+        }
+
+        .personnel-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2; /* Ensures the grid is above the overlay */
+            padding: 30px 0; /* Add some vertical space over the background image */
+        }
+
+        .person-card {
+            width: 180px; /* Card width based on visual size */
+            text-align: center;
+            margin: 10px;
+        }
+
+        .person-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px; /* Slight rounding of the image */
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .person-info {
+            padding-top: 5px;
+            line-height: 1.3;
+        }
+
+        .person-info .name {
+            font-weight: bold;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        .person-info .position {
+            font-size: 0.85em;
+            color: #800000; /* Dark Red for the position text */
+        }
+
+.footer-wrapper {
+    background-color: #3e3d3d; /* สี footer */
+    color: #dcdcdc; /* สีตัวอักษรใน footer */
+    padding: 15px 0;
+    font-size: 12px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* จัด 3 ส่วน ซ้าย กลาง ขวา */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+}
+
+.footer-left a, .footer-right a {
+    color: #fff; /* สีลิงก์ใน footer */
+    font-weight: 500;
+}
+
+.footer-left a:hover, .footer-right a:hover {
+    text-decoration: underline; /* ขีดเส้นใต้เมื่อเมาส์ชี้ */
+}
+
+.footer-center {
+    text-align: center;
+}
+.footer-center span {
+    margin: 0 5px; /* เว้นระยะห่างระหว่างข้อความ */
+}
+
+        /* Specific layout adjustments for the personnel rows */
+        .row-leader, .row-3-cols, .row-2-cols, .row-4-cols {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .row-leader .person-card {
+            margin: 0 auto; /* Center the single item */
+        }
+
+        .row-3-cols .person-card {
+            width: 25%; /* To ensure 3 fit reasonably */
+            max-width: 200px;
+        }
+
+        .row-4-cols .person-card {
+            width: 20%; /* To ensure 4 fit reasonably */
+            max-width: 180px;
+        }
