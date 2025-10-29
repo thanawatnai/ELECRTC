@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   </head>
   <body>
     <div class="header-wrapper">
@@ -36,10 +35,9 @@
         <a href="#">ติดต่อ</a>
       </nav>
     </div>
-    
-   <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary **text-center**">
-  <img id="slideshow-image" src="" alt="สื่อประชาสัมพันธ์" />
-</div>
+    <div class="slideshow-canter">
+        <img id="slideshow-image" src="" alt="สื่อประชาสัมพันธ์" />
+    </div>
 
 
 
@@ -452,8 +450,33 @@
                                             11.นายทวีศักดิ์ โชติรัตนภิรมย์ ครูแผนกช่างอิเล็กทรอนิกส์
                                             12.นายธนพล อ่อนพุก ครูแผนกช่างอิเล็กทรอนิกส์
                                             13.นางสาวอังคณา กรุดทอง ครูแผนกช่างอิเล็กทรอนิกส์
-                                            14.นางสาว เกศรินทร์ สุนทรคล้าย ครูแผนกช่างอิเล็กทรอนิกส์(AI Chatbots, ระบบวิเคราะห์ข้อมูล)
-                                4. 
+                                            14.นางสาว เกศรินทร์ สุนทรคล้าย ครูแผนกช่างอิเล็กทรอนิกส์ (AI Chatbots, ระบบวิเคราะห์ข้อมูล)
+                                4. การเชื่อมต่อหน้าต่างๆ(AI Chatbots, ระบบวิเคราะห์ข้อมูล)
+                                        หน้าหลัก เชื่อมหน้า index.html
+                                        หลักสูตร เชื่อมหน้า 
+                                        ปวช
+                                        ปวส
+                                        ป.ตรี
+                                        เอกสาร
+                                        ข่าวสาร
+                                        ศธ02
+                                        ตารางเรียน
+                                        ใบรายชื่อ
+                                        บุคลากร เชื่อมหน้า main.html
+                                        กิจกรรม
+                                5. **การเชื่อมต่อหน้าต่างๆ (ลิงก์สำคัญ):**
+                                        - **หน้าหลัก:** เชื่อมหน้า index.html (URL: /index.html)
+                                        - **หลักสูตร (รวม):** เชื่อมหน้า courses.html (URL: /courses.html)
+                                            - ปวช: /courses/pvoc.html
+                                            - ปวส: /courses/pvos.html
+                                            - ป.ตรี: /courses/bachelor.html
+                                        - **เอกสาร (รวม):** เชื่อมหน้า documents.html (URL: /documents.html)
+                                            - **ศธ02:** ไฟล์ PDF (URL: /documents/sorthor02.pdf)
+                                            - **ใบรายชื่อ:** ไฟล์ Excel (URL: /documents/student_list.xlsx)
+                                        - **ข่าวสาร:** เชื่อมหน้า news.html (URL: /news.html)
+                                        - **ตารางเรียน:** เชื่อมหน้า timetable.html (URL: /timetable.html)
+                                        - **บุคลากร:** เชื่อมหน้า main.html (URL: /main.html)
+                                        - **กิจกรรม:** เชื่อมหน้า activities.html (URL: /activities.html)
 
                                     การติดต่อ 
                                     แผนกวิชาช่างอิเล็กทรอนิกส์
@@ -468,6 +491,7 @@
                                 - หากคำถามไม่เกี่ยวข้องกับ แผนกวิชาช่างอิเล็กทรอนิกส์ ข้างต้น หรือข้อมูลไม่เพียงพอในการตอบ ให้ตอบแค่ข้อมูลที่มี เฉพาะของแผนก
                                 - ห้ามบอกว่าคุณคือ Large Language Model แต่ให้บอกว่าคุณคือ 'เลโอ ผู้ช่วย AI ของเรา'
                             `;
+
 
             // --- UI Logic ---
             function toggleChat() {
@@ -491,12 +515,18 @@
               messageDiv.className = `message ${
                 sender === "bot" ? "bot-message" : "user-message"
               } shadow-md`;
+               
 
               // ใช้ regex เพื่อหาและแปลงส่วนที่เป็น Markdown Bold (**) เป็น HTML bold
               const formattedText = text.replace(
                 /\*\*(.*?)\*\*/g,
                 "<strong>$1</strong>"
+                
               );
+
+              //-----------------------------------------------------------//
+              
+              //-----------------------------------------------------------//
               messageDiv.innerHTML = formattedText.trim();
 
               messagesContainer.appendChild(messageDiv);

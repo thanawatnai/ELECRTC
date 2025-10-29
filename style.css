@@ -110,9 +110,6 @@ a {
 }
 
 
-/* === 3. Button Nav (แถบปุ่มเมนู - สีเทา) === */
-
-/* 'nav-buttons-wrapper' ใช้กำหนดพื้นหลังสีเทาอ่อนเต็มความกว้างจอ */
 .nav-buttons-wrapper {
     background-color: #f7f7f7;
     border-bottom: 1px solid #ddd;
@@ -291,6 +288,8 @@ a {
 /* ** กล่องหลัก (The Main Box) ** */
 .promotion-box {
     /* ขนาดและระยะห่าง */
+    width: 100%;
+    height: auto;
     max-width: 200%; /* ความกว้างสูงสุด */
     margin: 5px auto; /* จัดให้อยู่ตรงกลางของหน้าจอ */
     padding: 0px;
@@ -606,6 +605,15 @@ a {
     display: block;
 }
 
+#slideshow-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0;
+    /* หากต้องการให้ยืดเต็มความกว้าง */
+    /* width: 100%; */
+    /* height: auto; */
+}
 
 
 
