@@ -183,11 +183,7 @@ a {
         flex-direction: column; 
     }
     
-    .sidebar-left, 
-    .sidebar-right {
-        /* ⭐️ ซ่อน Sidebars ทั้งหมด */
-        display: none; 
-    }
+    
     
     /* หรืออีกทางเลือก: ถ้าต้องการให้แสดงแค่ sidebar-left บนมือถือ */
     /*.sidebar-right { display: none; }
@@ -295,10 +291,9 @@ a {
 /* ** กล่องหลัก (The Main Box) ** */
 .promotion-box {
     /* ขนาดและระยะห่าง */
-    max-width: 100%; /* ความกว้างสูงสุด */
+    max-width: 200%; /* ความกว้างสูงสุด */
     margin: 5px auto; /* จัดให้อยู่ตรงกลางของหน้าจอ */
     padding: 0px;
-
     /* การออกแบบกล่อง */
     background-color: #f9f9f9; /* สีพื้นหลังกล่อง */
     border: 1px solid #ddd; /* เส้นขอบบางๆ */
