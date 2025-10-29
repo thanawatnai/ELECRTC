@@ -2,8 +2,8 @@ body, html {
     margin: 0; /* ลบระยะขอบเริ่มต้นของบราวเซอร์ */
     padding: 0; /* ลบระยะห่างภายในเริ่มต้นของบราวเซอร์ */
     font-family: 'Kanit', Tahoma, sans-serif; /* กำหนดฟอนต์หลักเป็น Kanit */
-    background-color: #1b1d1a; /* สีพื้นหลังเว็บโดยรวม (สีเทาอ่อน) */
-    color: #656565; /* สีตัวอักษรเริ่มต้น */
+    background-color: #8d8c8c; /* สีพื้นหลังเว็บโดยรวม (สีเทาอ่อน) */
+    color: #ffffff; /* สีตัวอักษรเริ่มต้น */
     font-size: 14px; /* ขนาดตัวอักษรเริ่มต้น */
 }
 
@@ -16,7 +16,7 @@ a {
 /* === Main Layout Container === */
 /* '.container' คือคลาสหลักที่ใช้ "จำกัดความกว้าง" และ "จัดเนื้อหาให้อยู่กลางจอ" */
 .container {
-    width: 960px; /* ความกว้างคงที่ของเนื้อหา (เหมือนในต้นฉบับ) */
+    width: auto; /* ความกว้างคงที่ของเนื้อหา (เหมือนในต้นฉบับ) */
     margin: 0 auto; /* '0 auto' คือ trick ในการจัดกล่องให้อยู่กลางจอแนวนอน */
 }
 
@@ -61,7 +61,7 @@ a {
 
 .college-name-en {
     font-size: 14px;
-    color: #555;
+    color: #000000;
 }
 
 .department-title {
@@ -78,7 +78,7 @@ a {
 .dept-name-th {
     display: block; /* ขึ้นบรรทัดใหม่ */
     font-size: 14px;
-    color: #555;
+    color: #000000;
 }
 
 
@@ -134,7 +134,7 @@ a {
 
         .page-title-area h2 {
             margin: 0;
-            color: #800000; /* Dark Red for the title */
+            color: #ffffff; /* Dark Red for the title */
             font-size: 1.8em;
             font-weight: 900;
         }
@@ -155,14 +155,15 @@ a {
 
         /* A light overlay to simulate the faded/washed-out look of the background image */
         .content-area::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgb(207, 207, 207); /* White overlay with 70% opacity */
-            z-index: 1;
+            /* ขนาดและระยะห่าง */
+                background-color: #ededed;
+                width: 100%;
+                height: auto;
+                max-width: 200%; /* ความกว้างสูงสุด */
+                margin: 5px auto; /* จัดให้อยู่ตรงกลางของหน้าจอ */
+                padding: 0px;
+                /* การออกแบบกล่อง */
+               
         }
 
         .personnel-grid {
@@ -186,7 +187,7 @@ a {
             height: auto;
             border-radius: 5px; /* Slight rounding of the image */
             border: 1px solid #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
         }
 
         .person-info {
@@ -196,13 +197,13 @@ a {
 
         .person-info .name {
             font-weight: bold;
-            color: #000000;
+            color: #ffffff;
             font-size: 1em;
         }
 
         .person-info .position {
             font-size: 1em;
-            color: #bf5656; /* Dark Red for the position text */
+            color: #ffffff; /* Dark Red for the position text */
         }
 
 .footer-wrapper {
@@ -255,3 +256,5 @@ a {
             width: 20%; /* To ensure 4 fit reasonably */
             max-width: 180px;
         }
+
+        
