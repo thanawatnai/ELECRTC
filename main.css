@@ -84,6 +84,21 @@ a {
 
 /* === 2. Main Nav (แถบนำทางหลัก - สีน้ำเงิน) === */
 
+@media (max-width: 768px) {
+    
+    .content-layout {
+        /* อาจเปลี่ยนเป็นแนวคอลัมน์ถ้ามีเนื้อหาตรงกลาง */
+        flex-direction: column; 
+    }
+    /* หรืออีกทางเลือก: ถ้าต้องการให้แสดงแค่ sidebar-left บนมือถือ */
+    /*.sidebar-right { display: none; }
+    .sidebar-left { 
+        flex-basis: 100%; 
+        display: block; 
+        margin-bottom: 10px;
+    }*/
+}
+
 /* 'nav-main-wrapper' ใช้กำหนดพื้นหลังสีน้ำเงินเต็มความกว้างจอ */
 .nav-main-wrapper {
     background-color: #3196fb; /* สีน้ำเงินแถบบน */
@@ -146,7 +161,7 @@ a {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 255, 0.7); /* White overlay with 70% opacity */
+            background-color: rgb(207, 207, 207); /* White overlay with 70% opacity */
             z-index: 1;
         }
 
@@ -170,7 +185,7 @@ a {
             width: 100%;
             height: auto;
             border-radius: 5px; /* Slight rounding of the image */
-            border: 1px solid #ccc;
+            border: 1px solid #ffffff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -181,13 +196,13 @@ a {
 
         .person-info .name {
             font-weight: bold;
-            color: #333;
-            font-size: 0.95em;
+            color: #000000;
+            font-size: 1em;
         }
 
         .person-info .position {
-            font-size: 0.85em;
-            color: #800000; /* Dark Red for the position text */
+            font-size: 1em;
+            color: #bf5656; /* Dark Red for the position text */
         }
 
 .footer-wrapper {

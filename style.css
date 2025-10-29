@@ -122,7 +122,7 @@ a {
 }
 
 .nav-buttons a {
-    background-color: #4199fd; /* สีปุ่มเมนูกลาง */
+    background-color: #000000; /* สีปุ่มเมนูกลาง */
     color: white;
     padding: 10px 20px;
     border-radius: 5px; /* ทำให้ขอบปุ่มมน */
@@ -151,9 +151,7 @@ a {
 .content-layout {
     display: flex;
     width: 100%;
-    margin: 0 auto;
-    
-    
+    margin: 0 auto;   
 }
 /* === 4.1 & 4.3 Sidebars (แถบด้านข้าง) === */
 .sidebar-left, .sidebar-right {
@@ -163,12 +161,11 @@ a {
     
     /* ⭐️ เพิ่ม margin-left/right เป็น 0 เพื่อให้ติดขอบของ .content-layout */
     margin: 0; 
-    
     background-color: #1190ffa6; 
     border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 10px;
-    box-sizing: border-box; 
+    box-sizing: auto; 
     
 }
 
@@ -179,8 +176,6 @@ a {
         /* อาจเปลี่ยนเป็นแนวคอลัมน์ถ้ามีเนื้อหาตรงกลาง */
         flex-direction: column; 
     }
-    
-    
     
     /* หรืออีกทางเลือก: ถ้าต้องการให้แสดงแค่ sidebar-left บนมือถือ */
     /*.sidebar-right { display: none; }
