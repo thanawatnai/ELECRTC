@@ -3,180 +3,477 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>แผนกวิชาช่างอิเล็กทรอนิกส์ - วิทยาลัยเทคนิคราชบุรี</title>
+    <title>อิเล็กทรอนิกส์</title>
+    <script src="/_sdk/element_sdk.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="test.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap"rel="stylesheet"/>
+    <link rel="head" href="head.js" />
+
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
   </head>
+
   <body>
-    <div class="header-wrapper">
-      <header class="container">
+    <nav>
+      <div class="container">
         <div class="logo-area">
           <img
             src="logo.png"
             alt="Ratchaburi Technical College Logo"
-            class="logo-img"
-          />
+            class="logo-img"/>
           <div class="college-title">
             <span class="college-name-th">Ratchaburi Technical College</span>
             <span class="college-name-en">วิทยาลัยเทคนิคราชบุรี</span>
           </div>
         </div>
-      </header>
-    </div>
-
-    <div class="nav-main-wrapper">
-      <nav class="container nav-main">
-        <a href="#">หน้าหลัก</a>
-        <a href="#">ติดต่อ</a>
-      </nav>
-    </div>
-    <div class="slideshow-canter">
-        <img id="slideshow-image" src="" alt="สื่อประชาสัมพันธ์" />
-    </div>
-
-
-
-    <!---------------------------------------->
-    <div class="nav-buttons-wrapper">
-      <nav class="container nav-buttons">
-        <div class="cards">
-          <!---------------------------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">หลักสูตร</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">หลักสูตรปี 2564</a>
-                <a href="#">หลักสูตรปี 2567</a>
-              </div>
-            </div>
+        <ul class="nav-links">
+          <li><a href="#portfolio">ผลงาน</a></li>
+          <li><a href="#news">ข่าวสาร</a></li>
+          <li><a href="test.html">ทีมงาน</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="hero">
+      <div class="hero-slider">
+        <div class="slides-wrapper">
+          <div class="hero-content">
+            <h1 id="hero-title">ช่างอิเล็กทรอนิกส์</h1>
+            <p id="hero-subtitle">ยินดีต้อนรับ</p>
           </div>
-          <!-----------------ปวช----------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">ปวช</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">หลักสูตรปี 2564</a>
-                <a href="#">หลักสูตรปี 2567</a>
-              </div>
-            </div>
-          </div>
-          <!-----------------ปวส----------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">ปวส</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">หลักสูตรปี 2564</a>
-                <a href="#">หลักสูตรปี 2567</a>
-              </div>
-            </div>
-          </div>
-          <!-----------------ปตรี----------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">ป.ตรี</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">หลักสูตรย่อย 1</a>
-                <a href="#">หลักสูตรย่อย 2</a>
-                <a href="#">หลักสูตรย่อย 3</a>
-              </div>
-            </div>
-          </div>
-          <!-----------------เอกสาร----------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">เอกสาร</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">หลักสูตรย่อย 1</a>
-                <a href="#">หลักสูตรย่อย 2</a>
-                <a href="#">หลักสูตรย่อย 3</a>
-              </div>
-            </div>
-          </div>
-          <!------------------ข่าวสาร---------------------->
-          <div class="cards">
-            <div class="dropdown">
-              <div class="card red dropbtn">
-                <p class="tip">ข่าวสาร</p>
-                <p class="second-text"></p>
-              </div>
-              <div class="dropdown-content">
-                <a href="#">กิจกรรม </a>
-                <a href="#">การเปิดรับสมัคร </a>
-                <a href="#">การลงทะเบียน</a>
-              </div>
-            </div>
-          </div>
-          <!------------------จบ---------------------->
         </div>
-      </nav>
+        
+        <div class="slide active"style="background-image : url('blackgard.png')"></div>
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://picsum.photos/id/1015/1920/1080');
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://picsum.photos/id/1025/1920/1080');
+          "
+        ></div>
+      </div>
+    </main>
+
+    <main class ="banner-container">
+        <div class="button-container flex flex-wrap justify-center gap-2 md:gap-4 p-4">  
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">หลักสูตร</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">ปวช</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+            
+            
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">ปวส</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">ป.ตรี</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">เอกสาร</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <div class="nav-button"> 
+                    <span class="main-text">ข่าวสาร</span>
+                </div>
+                <div class="dropdown-content">
+                  <a href="#">หลักสูตรปี 2564</a>
+                  <a href="#">หลักสูตรปี 2567</a>
+                </div>
+            </div>
+        </div>
     </div>
+    
+          
+    </main>
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title" id="portfolio-title">ผลงานของเรา</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-icon">🎨</div>
+            <h3>การออกแบบ</h3>
+            <p>
+              สร้างสรรค์ผลงานดิจิทัลที่สวยงามและใช้งานง่าย
+              พร้อมประสบการณ์ผู้ใช้ที่ยอดเยี่ยม
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-icon">💻</div>
+            <h3>พัฒนาเว็บไซต์</h3>
+            <p>
+              พัฒนาเว็บไซต์ที่ทันสมัย รวดเร็ว
+              และตอบสนองทุกอุปกรณ์อย่างสมบูรณ์แบบ
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-icon">📱</div>
+            <h3>แอปพลิเคชัน</h3>
+            <p>สร้างแอปพลิเคชันมือถือที่ใช้งานง่ายและมีประสิทธิภาพสูง</p>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-icon">🎬</div>
+            <h3>วิดีโอและสื่อ</h3>
+            <p>ผลิตเนื้อหาวิดีโอและสื่อดิจิทัลที่น่าสนใจและสร้างแรงบันดาลใจ</p>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-icon">📊</div>
+            <h3>การตลาดดิจิทัล</h3>
+            <p>วางกลยุทธ์การตลาดออนไลน์ที่มีประสิทธิภาพและวัดผลได้จริง</p>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-icon">🎯</div>
+            <h3>แบรนด์ดิ้ง</h3>
+            <p>สร้างเอกลักษณ์แบรนด์ที่โดดเด่นและจดจำได้ง่าย</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!------------------บาร---------------------->
-    <div class="content-wrapper-full">
-      <div class="container content-layout">
-        <aside class="sidebar-left">
-          <div class="sidebar-title">ข่าวสาร</div>
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
 
-          <nav class="sidebar-links">
-            <a href="https://std2018.vec.go.th/web/">ศธ02</a>
-            <a href="#">ตารางเรียน</a>
-            <a href="http://www.rtc.ac.th/RTC2568/?page_id=3446">ใบรายชื่อ</a>
-            <a href="http://www.rtc.ac.th/RTC2568/?page_id=3446">ใบรายชื่อ</a>
-          </nav>
-        </aside>
-
-        <main class="main-content">
-          <div class="promotion-card" id="mainPromotionCard">
-            <div class="card-image-wrapper">
-              <img
-                src="3.jpg"
-                alt="ภาพโปรโมชั่น"
-                class="card-image"
-                id="promoImage"
-              />
+    <section id="news">
+      <div class="container">
+        <h2 class="section-title" id="news-title">ข่าวสารล่าสุด</h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="news-image">📰</div>
+            <div class="news-content">
+              <div class="news-date">15 มกราคม 2025</div>
+              <h3>เปิดตัวโปรเจกต์ใหม่</h3>
+              <p>
+                เราภูมิใจที่จะประกาศเปิดตัวโปรเจกต์ใหม่ที่จะเปลี่ยนแปลงวงการดิจิทัล
+              </p>
             </div>
           </div>
-        </main>
+          <div class="news-card">
+            <div class="news-image">🏆</div>
+            <div class="news-content">
+              <div class="news-date">10 มกราคม 2025</div>
+              <h3>รับรางวัลด้านนวัตกรรม</h3>
+              <p>ทีมงานของเราได้รับรางวัลด้านนวัตกรรมดิจิทัลประจำปี 2025</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="news-image">🚀</div>
+            <div class="news-content">
+              <div class="news-date">5 มกราคม 2025</div>
+              <h3>ขยายทีมงาน</h3>
+              <p>เรากำลังมองหาผู้มีความสามารถมาร่วมงานกับเราในหลายตำแหน่ง</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="team">
+      <div class="container">
+        <h2 class="section-title" id="team-title">ทีมงานของเรา</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-avatar"><Link><img src="สุรศักดิ์.jpg" alt=""></Link></div>
+            <h3>สมชาย ใจดี</h3>
+            <p>ผู้อำนวยการบริหาร</p>
+          </div>
+          <div class="team-member">
+             <div class="team-avatar"><Link><img src="กาณ.jpg" alt=""></Link></div>
+            <h3>สมหญิง รักงาน</h3>
+            <p>หัวหน้าทีมพัฒนา</p>
+          </div>
+          <div class="team-member">
+             <div class="team-avatar"><Link><img src="index/สุรศักดิ์.jpg" alt=""></Link></div>
+            <h3>วิชัย สร้างสรรค์</h3>
+            <p>หัวหน้าทีมออกแบบ</p>
+          </div>
+          <div class="team-member">
+             <div class="team-avatar"><Link><img src="index/สุรศักดิ์.jpg" alt=""></Link></div>
+            <h3>สุดา มีความสุข</h3>
+            <p>ผู้จัดการฝ่ายการตลาด</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="footer-wrapper">
+      <footer class="container footer">
+        <div class="footer-left">
+          <a href="#">เกี่ยวกับ</a>
+        </div>
+        <div class="footer-center">
+          <span>โทร: 032-337228 032-338544</span>
+          <span>โทรสาร 032-337477</span>
+          <span>| E-mail: admin@rtc.ac.th</span>
+        </div>
+        <div class="footer-right">
+          <a href="https://maps.app.goo.gl/Zy9KtnbEP9dXWbha9">แผนผังตึกอิเล็กทรอนิกส์</a>
+        </div>
+      </footer>
+    </div>
+    
+    <script>
+      const defaultConfig = {
+        site_title: "Creative Studio",
+        hero_title: "สร้างสรรค์ผลงานที่โดดเด่น",
+        hero_subtitle: "นำเสนอนวัตกรรมและความคิดสร้างสรรค์ที่ไร้ขีดจำกัด",
+        portfolio_title: "ผลงานของเรา",
+        news_title: "ข่าวสารล่าสุด",
+        team_title: "ทีมงานของเรา",
+        footer_text: "© 2025 Creative Studio. สงวนลิขสิทธิ์",
+        background_color: "#667eea",
+        secondary_color: "#764ba2",
+        text_color: "#ffffff",
+        card_background: "rgba(255, 255, 255, 0.1)",
+        accent_color: "#ffffff",
+      };
 
-        <aside class="sidebar-right">
-          <div class="img-placeholder-person"></div>
-          <p class="person-caption">
-            นาย สุรศักดิ์ สุภาสุธากุล<br />
-            หัวหน้าแผนกวิชาช่าง<br />
-            อิเล็กทรอนิกส์
-          </p>
-          <nav class="sidebar-links">
-            <a href="main.html">บุคลากร</a>
-            <a href="#">ตารางสอน</a>
-            <a href="#">กิจกรรม</a>
-            <a href="#">ใบรายชื่อ</a>
-          </nav>
-        </aside>
+      async function onConfigChange(config) {
+        document.getElementById("site-title").textContent =
+          config.site_title || defaultConfig.site_title;
+        document.getElementById("hero-title").textContent =
+          config.hero_title || defaultConfig.hero_title;
+        document.getElementById("hero-subtitle").textContent =
+          config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById("portfolio-title").textContent =
+          config.portfolio_title || defaultConfig.portfolio_title;
+        document.getElementById("news-title").textContent =
+          config.news_title || defaultConfig.news_title;
+        document.getElementById("team-title").textContent =
+          config.team_title || defaultConfig.team_title;
+        document.getElementById("footer-text").textContent =
+          config.footer_text || defaultConfig.footer_text;
 
-        <!-----------------------------chatbot-------------------------->
-        <head>
+        const bgColor =
+          config.background_color || defaultConfig.background_color;
+        const secondaryColor =
+          config.secondary_color || defaultConfig.secondary_color;
+        const textColor = config.text_color || defaultConfig.text_color;
+        const cardBg = config.card_background || defaultConfig.card_background;
+        const accentColor = config.accent_color || defaultConfig.accent_color;
+
+        document.body.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${secondaryColor} 100%)`;
+        document.body.style.color = textColor;
+
+        document.querySelectorAll("nav").forEach((el) => {
+          el.style.background = `rgba(102, 126, 234, 0.95)`;
+        });
+
+        document
+          .querySelectorAll(".portfolio-item, .news-card")
+          .forEach((el) => {
+            el.style.background = cardBg;
+            el.style.borderColor = `rgba(255, 255, 255, 0.2)`;
+          });
+
+        document.querySelectorAll(".cta-button").forEach((el) => {
+          el.style.background = accentColor;
+          el.style.color = bgColor;
+        });
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [
+            {
+              get: () =>
+                config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                if (window.elementSdk) {
+                  window.elementSdk.config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+            },
+            {
+              get: () =>
+                config.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                if (window.elementSdk) {
+                  window.elementSdk.config.secondary_color = value;
+                  window.elementSdk.setConfig({ secondary_color: value });
+                }
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                if (window.elementSdk) {
+                  window.elementSdk.config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+            },
+            {
+              get: () =>
+                config.card_background || defaultConfig.card_background,
+              set: (value) => {
+                if (window.elementSdk) {
+                  window.elementSdk.config.card_background = value;
+                  window.elementSdk.setConfig({ card_background: value });
+                }
+              },
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                if (window.elementSdk) {
+                  window.elementSdk.config.accent_color = value;
+                  window.elementSdk.setConfig({ accent_color: value });
+                }
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined,
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["site_title", config.site_title || defaultConfig.site_title],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          [
+            "hero_subtitle",
+            config.hero_subtitle || defaultConfig.hero_subtitle,
+          ],
+          [
+            "portfolio_title",
+            config.portfolio_title || defaultConfig.portfolio_title,
+          ],
+          ["news_title", config.news_title || defaultConfig.news_title],
+          ["team_title", config.team_title || defaultConfig.team_title],
+          ["footer_text", config.footer_text || defaultConfig.footer_text],
+        ]);
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .querySelectorAll(
+            ".section-title, .portfolio-item, .news-card, .team-member"
+          )
+          .forEach((el) => {
+            observer.observe(el);
+          });
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'99ac733c72449d0b',t:'MTc2MjUxNDUxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+
+          <head>
           <meta charset="UTF-8" />
           <meta
             name="viewport"
@@ -191,8 +488,8 @@
               position: fixed;
               bottom: 20px;
               right: 20px;
-              background-color: #349af4; /* สีฟ้าสดใสสไตล์น้องเลโอ */
-              color: white;
+              background-color: #ffffff00; /* สีฟ้าสดใสสไตล์น้องเลโอ */
+              color: rgb(0, 0, 0);
               border: none;
               border-radius: 50%;
               width: 60px;
@@ -209,7 +506,7 @@
 
             .chatbot-button:hover {
               transform: scale(1.1);
-              background-color: #3671e9;
+              background-color: #acacac;
             }
 
             /* สไตล์สำหรับช่องแชททั้งหมด */
@@ -220,8 +517,8 @@
               width: 90vw; /* Responsive width */
               max-width: 350px;
               height: 450px;
-              background-color: white;
-              border: 1px solid #ccc;
+              background-color: rgba(245, 99, 14, 0.4);
+              border: 1px solid #cccccc65;
               border-radius: 10px;
               box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
               display: none;
@@ -232,7 +529,7 @@
             }
 
             /* สำหรับหน้าจอมือถือ */
-            @media (max-width: 640px) {
+            @media (max-width: 340px) {
               .chatbot-window {
                 bottom: 80px;
                 right: 10px;
@@ -252,7 +549,7 @@
             }
 
             .bot-message {
-              background-color: #e3f2fd; /* สีฟ้าอ่อน */
+              background-color: #e3f1fd; /* สีฟ้าอ่อน */
               align-self: flex-start;
               margin-right: auto;
               border-bottom-left-radius: 0;
@@ -260,7 +557,7 @@
             }
 
             .user-message {
-              background-color: #1875ff;
+              background-color: rgba(10, 101, 247, 0.596);
               color: white;
               align-self: flex-end;
               margin-left: auto;
@@ -273,7 +570,7 @@
               width: 8px;
               height: 8px;
               margin: 0 2px;
-              background-color: #4498ff;
+              background-color: #785c15;
               border-radius: 50%;
               opacity: 0;
               animation: bounce 1.4s infinite ease-in-out both;
@@ -344,7 +641,7 @@
           <!-- หน้าต่างแชทบอท -->
           <div class="chatbot-window" id="chatbotWindow">
             <div
-              class="chatbot-header bg-[#00bcd4] text-white p-4 flex justify-between items-center rounded-t-lg"
+              class="chatbot-header bg-[#cccccc4f] text-white p-4 flex justify-between items-center rounded-t-lg"
             >
               <span class="text-lg font-semibold"
                 >🤖 น้องเลโอ - ผู้ช่วย AI</span
@@ -658,74 +955,6 @@
           </script>
         </body>
       </div>
-
-      <div class="three-column-layout">
-        <div class="left-sidebar">
-          <h3 class="sidebar-title">📣 ข่าวเด่น</h3>
-          <div class="promotion-item">
-            <p>
-              <strong>โปรโมชั่นสุดคุ้ม!</strong> สมัครสมาชิกวันนี้รับส่วนลด 15%
-              ทันที
-            </p>
-            <a href="#link-left" class="sidebar-link">ดูรายละเอียด</a>
-          </div>
-        </div>
-
-        <div class="main-content">
-          <h1 class="page-title">สื่อประชาสัมพันธ์และกิจกรรมหลัก</h1>
-          <div class="card-image-wrapper">
-            <img
-              src="S__11526175.jpg"
-              alt="ภาพโปรโมชั่นพิเศษ"
-              class="card-image"
-              id="promoImage"
-            />
-          </div>
-          <p>... เนื้อหาข้อมูลข่าวสารเพิ่มเติม ...</p>
-
-          <div class="card-image-wrapper">
-            <img
-              src="S__11526175.jpg"
-              alt="ภาพโปรโมชั่นพิเศษ"
-              class="card-image"
-              id="promoImage"
-            />
-          </div>
-          <p>... เนื้อหาข้อมูลข่าวสารเพิ่มเติม ...</p>
-        </div>
-
-        <div class="right-sidebar">
-          <h3 class="sidebar-title">✨ ลิงก์ด่วน</h3>
-          <ul class="quick-links">
-            <li><a href="#faq">คำถามที่พบบ่อย (FAQ)</a></li>
-            <li><a href="#download">ดาวน์โหลดเอกสาร</a></li>
-            <li><a href="#contact">ติดต่อเรา</a></li>
-          </ul>
-          <div class="promotion-item mt-20">
-            <h4 class="small-title">📢 ประกาศจากระบบ</h4>
-            <p>ระบบจะปิดปรับปรุงในวันเสาร์ เวลา 23:00 - 02:00 น.</p>
-          </div>
-        </div>
-      </div>
-      <!-- From Uiverse.io by andrew-demchenk0 -->
-      
-      </div>
-    </div>
-    <div class="footer-wrapper">
-      <footer class="container footer">
-        <div class="footer-left">
-          <a href="#">เกี่ยวกับ</a>
-        </div>
-        <div class="footer-center">
-          <span>โทร: 032-337228 032-338544</span>
-          <span>โทรสาร 032-337477</span>
-          <span>| E-mail: admin@rtc.ac.th</span>
-        </div>
-        <div class="footer-right">
-          <a href="#">แผนผังตึกอิเล็กทรอนิกส์</a>
-        </div>
-      </footer>
-    </div>
   </body>
   <script src="script.js"></script>
 </html>

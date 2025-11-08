@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .fluid-btn {
+            display: inline-block;
+            background-color: #28a745; /* สีเขียว */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+
+            /* * นี่คือหัวใจสำคัญ: clamp(เล็กสุด, ค่าที่อิงกับจอ, ใหญ่สุด)
+             * 2.5vw = 2.5% ของความกว้างหน้าจอ
+             */
+
+            /* ฟอนต์: เล็กสุด 14px, ใหญ่สุด 18px, พยายามอยู่ที่ 2.5vw */
+            font-size: clamp(14px, 2.5vw, 18px);
+
+            /* * Padding (บน-ล่าง): เล็กสุด 10px, ใหญ่สุด 14px, พยายามอยู่ที่ 1.5vw
+             * Padding (ซ้าย-ขวา): เล็กสุด 16px, ใหญ่สุด 28px, พยายามอยู่ที่ 3vw
+             */
+            padding: clamp(10px, 1.5vw, 14px) clamp(16px, 3vw, 28px);
+        }
+
+        .fluid-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ทดสอบปุ่มแบบลื่นไหล (Fluid)</h1>
+    <p>ลองย่อ-ขยายหน้าต่างเบราว์เซอร์ช้าๆ ดูครับ ปุ่มจะย่อ-ขยายตาม</p>
+    
+    <button class="fluid-btn">คลิกที่นี่</button>
+
+</body>
+</html>

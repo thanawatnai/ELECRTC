@@ -1,257 +1,613 @@
-/* === General Reset & Font === */
-/* 'body, html' คือการกำหนดค่าเริ่มต้นให้ทั้งหน้าเว็บ */
-body, html {
-    margin: 0; /* ลบระยะขอบเริ่มต้นของบราวเซอร์ */
-    padding: 0; /* ลบระยะห่างภายในเริ่มต้นของบราวเซอร์ */
-    font-family: 'Kanit', Tahoma, sans-serif; /* กำหนดฟอนต์หลักเป็น Kanit */
-    background-color: #1b1d1a; /* สีพื้นหลังเว็บโดยรวม (สีเทาอ่อน) */
-    color: #656565; /* สีตัวอักษรเริ่มต้น */
-    font-size: 14px; /* ขนาดตัวอักษรเริ่มต้น */
-}
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
 
-/* 'a' คือการกำหนดค่าให้ลิงก์ทั้งหมด */
-a {
-    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
-    color: inherit; /* ให้สีลิงก์เป็นสีเดียวกับตัวอักษรปกติ (ตามแม่) */
-}
+ html,
+ body {
+   height: 100%;
+   box-sizing: border-box;
+ }
 
-/* === Main Layout Container === */
-/* '.container' คือคลาสหลักที่ใช้ "จำกัดความกว้าง" และ "จัดเนื้อหาให้อยู่กลางจอ" */
-.container {
-    width: 960px; /* ความกว้างคงที่ของเนื้อหา (เหมือนในต้นฉบับ) */
-    margin: 0 auto; /* '0 auto' คือ trick ในการจัดกล่องให้อยู่กลางจอแนวนอน */
-}
+ body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: linear-gradient(135deg, #ffffff 0%, #d1cbcb 100%);
+   color: #000000;
+   overflow-x: hidden;
+ }
 
+ .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+ }
 
-/* === 1. Header (ส่วนหัว) === */
+ .container {
+   width: 960px;
+   /* ความกว้างคงที่ของเนื้อหา (เหมือนในต้นฉบับ) */
+   margin: 0 auto;
+   /* '0 auto' คือ trick ในการจัดกล่องให้อยู่กลางจอแนวนอน */
+ }
 
-/* 'header-wrapper' ใช้กำหนดพื้นหลังสีขาวเต็มความกว้างจอ */
-.header-wrapper {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd; /* เส้นคั่นบางๆ ข้างล่าง */
-    padding: 5px 0; /* เว้นระยะห่าง บน-ล่าง */
-    
-}
+ .header-wrapper {
+   background-color: #ffffff;
+   border-bottom: 1px solid #ddd;
+   /* เส้นคั่นบางๆ ข้างล่าง */
+   padding: 5px 0;
+   /* เว้นระยะห่าง บน-ล่าง */
 
-/* 'header' ที่อยู่ใน .container */
-.header {
-    display: flex; /* จัดเรียงโลโก้และชื่อแผนกในแนวนอน */
-    justify-content: space-between; /* ให้โลโก้อยู่ซ้ายสุด และชื่อแผนกอยู่ขวาสุด */
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-}
+ }
 
-.logo-area {
-    display: flex; /* จัดเรียงโลโก้กับชื่อวิทยาลัยในแนวนอน */
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-}
+ .header {
+   display: flex;
+   /* จัดเรียงโลโก้และชื่อแผนกในแนวนอน */
+   justify-content: space-between;
+   /* ให้โลโก้อยู่ซ้ายสุด และชื่อแผนกอยู่ขวาสุด */
+   align-items: center;
+   /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+ }
 
-.logo-img {
-    height: 80px; /* ปรับขนาดโลโก้ */
-    margin-right: 15px; /* เว้นระยะห่างด้านขวา */
-}
+ .logo-area {
+   display: flex;
+   /* จัดเรียงโลโก้กับชื่อวิทยาลัยในแนวนอน */
+   align-items: center;
+   /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+ }
 
-.college-title {
-    display: flex;
-    flex-direction: column; /* จัดชื่อวิทยาลัย ไทย/อังกฤษ ให้อยู่ในแนวตั้ง */
-}
+ .logo-img {
+   height: 80px;
+   /* ปรับขนาดโลโก้ */
+   margin-right: 10px;
+   /* เว้นระยะห่างด้านขวา */
+ }
 
-.college-name-th {
-    font-weight: 600; /* ตัวหนา */
-    font-size: 16px;
-    color: #000;
-}
+ .college-title {
+   display: flex;
+   flex-direction: column;
+   /* จัดชื่อวิทยาลัย ไทย/อังกฤษ ให้อยู่ในแนวตั้ง */
+ }
 
-.college-name-en {
-    font-size: 14px;
-    color: #555;
-}
+ .college-name-th {
+   font-weight: 600;
+   /* ตัวหนา */
+   font-size: 16px;
+   color: #000;
+ }
 
-.department-title {
-    text-align: right; /* จัดข้อความชิดขวา */
-}
+ .college-name-en {
+   font-size: 14px;
+   color: #000000;
+ }
 
-.dept-name-en {
-    display: block; /* ขึ้นบรรทัดใหม่ */
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-}
+ .department-title {
+   text-align: right;
+   /* จัดข้อความชิดขวา */
+ }
 
-.dept-name-th {
-    display: block; /* ขึ้นบรรทัดใหม่ */
-    font-size: 14px;
-    color: #555;
-}
+ .dept-name-en {
+   display: block;
+   /* ขึ้นบรรทัดใหม่ */
+   font-size: 18px;
+   font-weight: 600;
+   color: #000000;
+ }
 
+ .dept-name-th {
+   display: block;
+   /* ขึ้นบรรทัดใหม่ */
+   font-size: 14px;
+   color: #000000;
+ }
 
-/* === 2. Main Nav (แถบนำทางหลัก - สีน้ำเงิน) === */
+ /* Navigation */
+ nav {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background: rgba(101, 101, 101, 0.161);
+   backdrop-filter: blur(10px);
+   z-index: 1000;
+   padding: 3px 0;
+   box-shadow: 0 2px 20px rgba(168, 74, 74, 0.1);
+   animation: slideDown 0.5s ease-out;
+ }
 
-/* 'nav-main-wrapper' ใช้กำหนดพื้นหลังสีน้ำเงินเต็มความกว้างจอ */
-.nav-main-wrapper {
-    background-color: #3196fb; /* สีน้ำเงินแถบบน */
-    color: rgb(255, 255, 255);
-}
+ @keyframes slideDown {
+   from {
+     transform: translateY(-100%);
+     opacity: 0;
+   }
 
-.nav-main {
-    display: flex;
-    justify-content: space-between; /* จัด 'หน้าหลัก' ไปซ้าย, 'ติดต่อ' ไปขวา */
-    padding: 10px 0; /* เว้นระยะห่าง บน-ล่าง (ในไฟล์ต้นฉบับคือ 10px 20px) */
-    font-weight: 500;
-}
+   to {
+     transform: translateY(0);
+     opacity: 1;
+   }
+ }
 
-.nav-main a {
-    color: rgb(245, 245, 245);
-    padding: 5px 10px;
-}
-/* ':hover' คือเอฟเฟกต์เมื่อเอาเมาส์ไปชี้ */
-.nav-main a:hover {
-    background-color: #4778aa; /* สีเข้มขึ้น */
-    border-radius: 4px;
-}
+ nav .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
 
+ .logo {
+   font-size: 24px;
+   font-weight: bold;
+   color: #000000;
+ }
 
-.nav-buttons-wrapper {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0; /* เว้นระยะห่าง บน-ล่าง */
-}
+ .nav-links {
+   display: flex;
+   gap: 30px;
+   list-style: none;
+ }
 
-.nav-buttons {
-    display: flex; /* จัดปุ่มเรียงกันแนวนอน */
-    justify-content: space-around; /* กระจายปุ่มให้มีระยะห่างเท่าๆ กัน */
-}
+ .nav-links a {
+   color: #000000;
+   text-decoration: none;
+   font-weight: 500;
+   transition: all 0.3s ease;
+   position: relative;
+ }
 
-.nav-buttons a {
-    background-color: #000000; /* สีปุ่มเมนูกลาง */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px; /* ทำให้ขอบปุ่มมน */
-    font-weight: 500;
-    flex-grow: 1; /* ทำให้ปุ่มขยายจนเต็มพื้นที่ (แต่ไม่เกินไป) */
-    text-align: center; /* ข้อความในปุ่มอยู่กลาง */
-    margin: 0 5px; /* ระยะห่างระหว่างปุ่ม */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* เพิ่มเงาจางๆ ให้ปุ่ม */
-}
+ .nav-links a::after {
+   content: '';
+   position: absolute;
+   bottom: -5px;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background: #898989;
+   transition: width 0.3s ease;
+ }
 
-.nav-buttons a:hover {
-    background-color: #0980ff; /* สีเข้มขึ้นเมื่อเมาส์ชี้ */
-}
+ .nav-links a:hover::after {
+   width: 100%;
+ }
 
+ .hero {
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding-top: 0px;
+ }
 
-/* === 4. Content Wrapper (ส่วนเนื้อหาหลัก) === */
+ .hero-content {
+   animation: fadeInUp 1s ease-out;
+ }
 
-/* 'content-wrapper-full' ใช้กำหนดพื้นหลังสีขาวเต็มความกว้างจอ */
-.content-wrapper-full {
-    background-color: #ffffff00;
-    width: 100%;
-    
-}
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(30px);
+   }
 
-/* 'content-layout' ใช้ 'flex' เพื่อแบ่ง layout เป็น 3 ส่วน */
-.content-layout {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;   
-}
-/* === 4.1 & 4.3 Sidebars (แถบด้านข้าง) === */
-.sidebar-left, .sidebar-right {
-    flex-basis: 180px;
-    flex-shrink: 0; 
-    
-    
-    /* ⭐️ เพิ่ม margin-left/right เป็น 0 เพื่อให้ติดขอบของ .content-layout */
-    margin: 0; 
-    background-color: #1190ffa6; 
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: auto; 
-    
-}
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ .hero h1 {
 
-/* ⭐️ Media Query: ซ่อน Sidebars บนหน้าจอขนาดเล็ก (Tablet แนวตั้ง & Mobile) */
-@media (max-width: 768px) {
-    
-    .content-layout {
-        /* อาจเปลี่ยนเป็นแนวคอลัมน์ถ้ามีเนื้อหาตรงกลาง */
-        flex-direction: column; 
-    }
-    
-    /* หรืออีกทางเลือก: ถ้าต้องการให้แสดงแค่ sidebar-left บนมือถือ */
-    /*.sidebar-right { display: none; }
-    .sidebar-left { 
-        flex-basis: 100%; 
-        display: block; 
-        margin-bottom: 10px;
-    }*/
-}
-/* รูปจำลอง (แทนที่ด้วย <img> ของคุณ) */
-.img-placeholder {
-    height: 100px;
-    background-color: #ffffff;
-    border: 1px solid #dcdcdc;
-    margin-bottom: 10px;
-    background-image: url('logo.png');/* รูปข่าวสาร */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40px;
-}
-.img-placeholder-person {
-    height: 180px; /* รูปคนจะสูงกว่า */
-    width: 80%;
-    margin: 0 auto 10px auto; /* จัดกลาง */
-    background-color: #d9e8f5;
-    border: 1px solid #b7cce0;
-    /* รูปไอคอนคน (ใช้ชั่วคราว) */
-    background-image: url('สุรศักดิ์.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 140px;
-}
-
-/* ลิงก์เมนูใน sidebar */
-.sidebar-links a {
-    display: block; /* ให้ลิงก์แสดงเต็มบรรทัด */
-    background-color: #ffffff;
-    border: 1px solid #8dc6ff;
-    padding: 8px 10px;
-    margin-bottom: 6px; /* เว้นระยะห่างระหว่างปุ่ม */
-    border-radius: 4px;
-    color: #000000;
-    font-weight: 500;
-}
-
-.sidebar-links a:hover {
-    background-color: #b8b8b8; /* สีสว่างขึ้นเมื่อเมาส์ชี้ */
-}
-
-.sidebar-right {
-    text-align: center; /* จัดข้อความและรูปให้อยู่กลาง */
-}
-.sidebar-left {
-    text-align: center; /* จัดข้อความและรูปให้อยู่กลาง */
-}
-
-.person-caption {
-    font-size: 13px;
-    line-height: 1.5; /* ระยะห่างระหว่างบรรทัด */
-    color: #ffffff;
-    font-weight: 500;
-    margin-top: 0;
-}
-
-/* === 4.2 Main Content (เนื้อหากลาง) === */
-.main-content {
-    flex-grow: 1; /* ทำให้เนื้อหาส่วนนี้ "ขยาย" จนเต็มพื้นที่ที่เหลือตรงกลาง */
-    padding: 0 15px; /* เว้นระยะห่างจาก sidebar ซ้ายและขวา */
-}
+   font-size: 64px;
+   margin-bottom: 90px;
+   color: #e7e7e7;
+   text-decoration: none;
+   border-radius: 50px;
+   opacity: 0.9;
 
 
-/* === 5. Footer (ส่วนท้าย) === */
+ }
 
-/* 'footer-wrapper' ใช้กำหนดพื้นหลังสีเทาเข้มเต็มความกว้างจอ */
-.footer-wrapper {
-    background-color: #3e3d3d; /* สี footer */
+ .hero p {
+   font-size: 24px;
+   margin-bottom: 40px;
+   opacity: 0.9;
+ }
+
+ .cta-button {
+   display: inline-block;
+   padding: 15px 40px;
+   background: #ffffff;
+   color: #000000;
+   text-decoration: none;
+   border-radius: 50px;
+   font-weight: bold;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+ }
+
+ .cta-button:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+ }
+
+ /* Section Styles */
+ section {
+   padding: 100px 0;
+   min-height: 100%;
+ }
+
+ .section-title {
+   text-align: center;
+   font-size: 48px;
+   margin-bottom: 60px;
+   opacity: 0;
+   transform: translateY(20px);
+   transition: all 0.6s ease;
+ }
+
+ .section-title.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ /*---------------*/
+
+ .portfolio-grid2 {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+ }
+
+ .portfolio-item2 {
+   background: rgba(255, 113, 5, 0.286);
+   backdrop-filter: blur(10px);
+   border-radius: 20px;
+   padding: 30px;
+   transition: all 0.4s ease;
+   opacity: 0;
+   transform: translateY(30px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+ }
+
+ .portfolio-item2.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .portfolio-item2:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+   background: rgba(255, 255, 255, 0.15);
+ }
+
+ .portfolio-icon2 {
+   font-size: 48px;
+   margin-bottom: 20px;
+ }
+
+ .portfolio-item2 h3 {
+   font-size: 24px;
+   margin-bottom: 15px;
+ }
+
+ .portfolio-item2 p {
+   opacity: 0.8;
+   line-height: 1.6;
+ }
+
+ /*---------------*/
+
+
+
+
+
+
+ /* Portfolio Grid */
+ .portfolio-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 30px;
+ }
+
+ .portfolio-item {
+   background: rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(10px);
+   border-radius: 20px;
+   padding: 30px;
+   transition: all 0.4s ease;
+   opacity: 0;
+   transform: translateY(30px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+ }
+
+ .portfolio-item.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .portfolio-item:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+   background: rgba(255, 255, 255, 0.15);
+ }
+
+ .portfolio-icon {
+   font-size: 48px;
+   margin-bottom: 20px;
+ }
+
+ .portfolio-item h3 {
+   font-size: 24px;
+   margin-bottom: 15px;
+ }
+
+ .portfolio-item p {
+   opacity: 0.8;
+   line-height: 1.6;
+ }
+
+ /* News Section */
+ .news-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 30px;
+ }
+
+ .news-card {
+   background: rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(10px);
+   border-radius: 40px;
+   overflow: hidden;
+   transition: all 0.4s ease;
+   opacity: 0;
+   transform: scale(0.9);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+ }
+
+ .news-card.visible {
+   opacity: 1;
+   transform: scale(1);
+ }
+
+ .news-card:hover {
+   transform: scale(1.05);
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+ }
+
+ .news-image {
+   width: 100%;
+   height: 200px;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 64px;
+ }
+
+ .news-content {
+   padding: 25px;
+ }
+
+ .news-date {
+   color: rgba(255, 255, 255, 0.7);
+   font-size: 14px;
+   margin-bottom: 10px;
+ }
+
+ .news-card h3 {
+   font-size: 22px;
+   margin-bottom: 15px;
+ }
+
+ .news-card p {
+   opacity: 0.8;
+   line-height: 1.6;
+ }
+
+ /* Team Section */
+ .team-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 40px;
+ }
+
+ .team-member {
+   text-align: center;
+   opacity: 0;
+   transform: translateY(30px);
+   transition: all 0.4s ease;
+ }
+
+ .team-member.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .team-avatar {
+   width: 150px;
+   height: 200px;
+   margin: 0 auto 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 64px;
+   transition: all 0.4s ease;
+   border: 4px solid rgba(0, 0, 0, 0);
+ }
+
+ .team-member:hover .team-avatar {
+   transform: scale(1.1) rotate(5deg);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+ }
+
+ .team-member h3 {
+   font-size: 24px;
+   margin-bottom: 10px;
+ }
+
+ .team-member p {
+   opacity: 0.8;
+ }
+
+ /* Footer */
+ footer {
+   background: rgba(0, 0, 0, 0.3);
+   padding: 40px 0;
+   text-align: center;
+ }
+
+ footer p {
+   opacity: 0.8;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+   .hero h1 {
+     font-size: 40px;
+   }
+
+   .hero p {
+     font-size: 18px;
+   }
+
+   .section-title {
+     font-size: 36px;
+   }
+
+   .nav-links {
+     gap: 15px;
+   }
+
+   .portfolio-grid,
+   .news-grid,
+   .team-grid {
+     grid-template-columns: 1fr;
+   }
+ }
+
+ .nav-item {
+   position: relative;
+ }
+
+ /* (2) สไตล์ปุ่มหลัก (เหมือนเดิม)
+           เรายังคงใช้ .nav-button เหมือนเดิม */
+ .nav-button {
+   background-color: #ef8d257f;
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   border-radius: 10px;
+   font-weight: 500;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 30px;
+   width: 100%;
+   text-align: center;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1),
+     0 4px 6px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease,
+     box-shadow 0.3s ease;
+   cursor: pointer;
+  height: 60px;
+  width: 110px;
+
+ }
+
+ .nav-button:hover {
+   background-color: #ef9b5bf2;
+   transform: translateY(-8px);
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4),
+     0 10px 10px rgba(91, 134, 195, 0.3);
+ }
+
+ .nav-button:active {
+   transform: translateY(-2px);
+   box-shadow: 0 8px 16px rgba(91, 134, 195, 0.3);
+ }
+
+ .nav-button .main-text {
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 1.2;
+   /* ป้องกันไม่ให้เมาส์ไปโดนตัวอักษรแล้วเมนูหาย */
+   pointer-events: none;
+ }
+
+ .nav-button .sub-text {
+   font-size: 13px;
+   font-weight: 400;
+   opacity: 0.85;
+   margin-top: 4px;
+   pointer-events: none;
+ }
+
+
+ .dropdown-content {
+   visibility: hidden;
+   opacity: 0;
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%) translateY(10px);
+   /* เริ่มจากต่ำกว่าเล็กน้อย */
+
+   background-color: #ffffff48;
+   min-width: 180px;
+   /* ความกว้างของเมนูย่อ */
+   border-radius: 8px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+   z-index: 10;
+   padding: 8px 0;
+   /* เว้นขอบบน-ล่าง ภายในกล่อง */
+
+   /* !! อนิเมชั่น !! */
+   transition: opacity 0.3s ease,
+     transform 0.3s ease,
+     visibility 0.3s;
+ }
+
+ /* (4) สไตล์ของลิงก์ย่อยๆ ข้างใน */
+ .dropdown-content a {
+   color: #000000be;
+   /* สีตัวอักษรเข้ม */
+   padding: 12px 20px;
+   /* ขนาดของแต่ละแถว */
+   font-size: 15px;
+   font-weight: 400;
+   text-decoration: none;
+   display: block;
+   /* ทำให้เป็นแถวเต็มความกว้าง */
+   transition: background-color 0.2s ease;
+ }
+
+ /* (5) เอฟเฟกต์ตอนชี้ลิงก์ย่อย */
+ .dropdown-content a:hover {
+   background-color: #4141413e;
+   /* เปลี่ยนสีพื้นหลังเล็กน้อย */
+ }
+
+ .nav-item:hover .dropdown-content {
+   visibility: visible;
+   opacity: 1;
+   transform: translateX(-50%) translateY(0);
+   /* เลื่อนกลับมาที่ตำแหน่งจริง */
+ }
+
+
+ .button-container {
+   width: 100%;
+   bottom: -50px;
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-start;
+   gap: 20px;
+   box-sizing: border-box;
+   background: rgba(152, 152, 152, 0);
+   backdrop-filter: blur(10px);
+   padding: 30px;
+   transition: all 0.4s ease;
+   border: 1px solid rgba(249, 249, 249, 0);
+   position: absolute;
+ }
+ /*-------*/
+ .footer-wrapper {
+    background-color: #000000; /* สี footer */
     color: #dcdcdc; /* สีตัวอักษรใน footer */
     padding: 15px 0;
     font-size: 12px;
@@ -279,341 +635,7 @@ a {
     margin: 0 5px; /* เว้นระยะห่างระหว่างข้อความ */
 }
 
-/*---------ข่าวสาร--------------*/
-/* ** กล่องหลัก (The Main Box) ** */
-.promotion-box {
-    /* ขนาดและระยะห่าง */
-    width: 100%;
-    height: auto;
-    max-width: 200%; /* ความกว้างสูงสุด */
-    margin: 5px auto; /* จัดให้อยู่ตรงกลางของหน้าจอ */
-    padding: 0px;
-    /* การออกแบบกล่อง */
-    background-color: #f9f9f9; /* สีพื้นหลังกล่อง */
-    border: 1px solid #ddd; /* เส้นขอบบางๆ */
-    border-radius: 10px; /* มุมโค้งมน */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
-    font-family: 'Arial', sans-serif; /* ฟอนต์ที่อ่านง่าย */
-    text-align: center; /* จัดเนื้อหาให้อยู่ตรงกลาง */
-}
-
-/* ** ส่วนหัว (Header) ** */
-.promotion-header {
-    border-bottom: 2px solid #007bff; /* เส้นแบ่งใต้หัวข้อ */
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.promotion-title {
-    color: #007bff; /* สีของหัวข้อ */
-    font-size: 1.8em; /* ขนาดตัวอักษรของหัวข้อ */
-    margin: 0;
-}
-
-/* ** ส่วนเนื้อหา (Content) ** */
-.promotion-content p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.promotion-content strong {
-    color: #ff5722; /* เน้นข้อความสำคัญด้วยสี */
-    font-weight: bold;
-}
-
-/* ** รายการลิงก์ (List) ** */
-.promotion-list {
-    list-style: none; /* เอา bullet point ออก */
-    padding: 0;
-    margin-top: 15px;
-}
-
-.promotion-list li {
-    margin-bottom: 8px;
-}
-
-.promotion-list a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 0.95em;
-    transition: color 0.3s;
-}
-
-.promotion-list a:hover {
-    color: #0056b3; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
-    text-decoration: underline;
-}
-
-/* ** ปุ่มหลัก (Call-to-Action Button) ** */
-.promotion-button {
-    display: inline-block; /* ทำให้ปุ่มมีขนาดตามเนื้อหา */
-    padding: 12px 25px;
-    background-color: #ff5722; /* สีพื้นหลังปุ่ม (สีส้ม/แดง เพื่อดึงดูด) */
-    color: white; /* สีตัวอักษร */
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 15px;
-}
-/*----------------------*/
-/* ** Container หลัก: เปิดใช้งาน Flexbox ** */
-.three-column-layout {
-    display: flex; /* เปิดใช้งาน Flexbox */
-    width: 90%; /* กำหนดความกว้างรวมของ Layout */
-    margin: 30px auto; /* จัดให้อยู่ตรงกลางหน้าจอ */
-    gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
-}
-
-/* ** คอลัมน์ด้านข้าง (Sidebar: ซ้ายและขวา) ** */
-.left-sidebar, .right-sidebar {
-    /* กำหนดความกว้าง: 20% ของพื้นที่ทั้งหมด */
-    flex: 0 0 20%;
-    padding: 15px;
-    background-color: #f7f7f7;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    height: fit-content; /* ให้กล่องมีความสูงเท่ากับเนื้อหา */
-    
-}
-
-.sidebar-title {
-    color: #007bff;
-    font-size: 1.2em;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 15px;
-}
-
-.promotion-item {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-left: 4px solid #ff5722;
-    background-color: #fff;
-}
-
-.sidebar-link {
-    display: block;
-    margin-top: 5px;
-    color: #ff5722;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ** คอลัมน์ตรงกลาง (Main Content) ** */
 .main-content {
-    /* ใช้พื้นที่ที่เหลือทั้งหมด (60% ของพื้นที่ทั้งหมด) */
-    flex: 1; 
-    padding: 1px;
-    background-color: #ffffff00;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    flex-grow: 1; /* ทำให้เนื้อหาส่วนนี้ "ขยาย" จนเต็มพื้นที่ที่เหลือตรงกลาง */
+    padding: 0 15px; /* เว้นระยะห่างจาก sidebar ซ้ายและขวา */
 }
-
-.page-title {
-    color: #333;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 10px;
-}
-
-.main-promotion-box {
-    background-color: #e6f7ff;
-    padding: 25px;
-    border-radius: 6px;
-    border-left: 5px solid #007bff;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.main-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-}
-
-.main-button:hover {
-    background-color: #0056b3;
-}
-
-/* ** Responsive Design (สำคัญมากสำหรับ Layout) ** */
-@media (max-width: 992px) {
-    .three-column-layout {
-        /* เปลี่ยนเป็นเรียงซ้อนกันเมื่อหน้าจอเล็กกว่า 992px */
-        flex-direction: column;
-        width: 95%;
-    }
-
-    .left-sidebar, .right-sidebar {
-        /* Sidebar จะใช้ความกว้างเต็มเมื่อเรียงซ้อนกัน */
-        flex: 1 1 100%;
-    }
-
-    .left-sidebar {
-        /* อาจซ่อน Sidebar บางส่วนเมื่ออยู่บนมือถือ */
-        order: 2; /* ย้าย Sidebar ซ้ายไปอยู่ด้านล่างเนื้อหาหลัก */
-    }
-    
-    .main-content {
-        order: 1; /* เนื้อหาหลักอยู่ด้านบนสุด */
-    }
-
-    .right-sidebar {
-        order: 3;
-    }
-}
-
-/*-----------------*/
-
-/* From Uiverse.io by Thomasfadi */ 
-
-.cards {
-  display: flex;
-  flex-direction: row;
-  /* ⭐️ เพิ่มบรรทัดนี้: อนุญาตให้ปุ่มขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
-  flex-wrap: wrap; 
-  gap: 15px;
-  /* ⭐️ จัดกระจายปุ่มให้สวยงามเมื่อมีพื้นที่ */
-  justify-content: center; 
-  /* ⭐️ ให้แน่ใจว่ามันไม่ออกนอกขอบจอ */
-  max-width: 100%; 
-}
-/* ... .cards .red ... */
-
-.cards .red {
-  background-color: #3c9afffe;
-
-}
-
-.cards .card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  height: 50px;
-  width: 110px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition: 400ms;
- 
-}
-
-.cards .card p.tip {
-  font-size: 1em;
-  font-weight: 700;
-}
-
-.cards .card p.second-text {
-  font-size: .7em;
-}
-
-.cards .card:hover {
-  transform: scale(1.2, 1.2);
-}
-
-.cards:hover > .card:not(:hover) {
-  filter: blur(5px);
-  transform: scale(0.9, 0.9);
-}
-/*-------------------*/
-
-
-.dropdown {
-    position: relative; 
-    display: inline-block; 
-}
-
-/* Style for the button (your card) - dropbtn class is optional if you use .dropdown .card */
-.dropbtn {
-    cursor: pointer;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #6dbaf9
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    
-}
-
-
-.dropdown:hover .dropbtn {
-    background-color: #ffffff00; 
-    margin-bottom: 5px;
-    
-}
-/* 1. ปรับสีพื้นหลังของเมนูย่อยให้เข้ากับธีมสีฟ้า */
-.dropdown-content {
-    display: none;
-    position: absolute; 
-    /* เปลี่ยนพื้นหลังให้เป็นสีขาวทึบ เพื่อให้อ่านง่ายขึ้น */
-    background-color: #ffffff96; 
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10; /* เพิ่ม z-index ให้สูงขึ้น เพื่อให้อยู่ด้านบน */
-    border-radius: 5px; /* เพิ่มขอบมน */
-    
-    
-    /* *สำคัญ*: อาจต้องปรับตำแหน่งเพื่อให้ Dropdown อยู่ใต้ Card พอดี */
-    top: 100%; 
-    left: 0; 
-}
-
-/* 2. ปรับสีลิงก์ภายในเมนูย่อย */
-.dropdown-content a {
-    color: #ffffff; /* เปลี่ยนตัวอักษรเป็นสีเข้ม (เช่น สีดำ) เพื่อให้อ่านได้บนพื้นหลังขาว */
-    text-decoration: none;
-    border-radius: 5px; /* เพิ่มขอบมนให้กับลิงก์ */
-    background-color: #ff7a7a;
-    padding: 12px 16px;
-    margin-bottom: 5px;
-    display: block;
-    
-}
-
-/* 3. ปรับสีพื้นหลังของลิงก์เมื่อ Hover */
-.dropdown-content a:hover {
-    /* ใช้สีฟ้าที่ใกล้เคียงกับสี Card ของคุณ */
-    background-color: #f5b4b4; 
-}
-
-/* 4. แก้ไขปุ่มเมื่อ Dropdown ถูก Hover */
-.dropdown:hover .dropbtn {
-    /* ทำให้ Card หลักเด่นขึ้นเล็กน้อยเมื่อเปิดเมนูย่อย */
-    background-color: #0055ff; 
-}
-
-/* แสดง Dropdown เมื่อเมาส์ชี้ */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-#slideshow-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px 0;
-    /* หากต้องการให้ยืดเต็มความกว้าง */
-    /* width: 100%; */
-    /* height: auto; */
-}
-
-
-
-
-
-
-
-

@@ -1,0 +1,136 @@
+/* การตั้งค่าพื้นฐาน */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* 1. ตัวครอบสไลด์เดอร์หลัก */
+.hero-slider {
+    position: relative; /* สำคัญมาก: เพื่อให้ .hero-content และ .slider-nav อ้างอิงตำแหน่งได้ */
+    width: 100%;
+    height: 80vh; /* ให้สูงเต็มหน้าจอ */
+    overflow: hidden; /* ซ่อนส่วนที่ล้นออกไป */
+    background-color: #d8d8d8; /* สีพื้นหลังเผื่อรูปไม่โหลด */
+}
+
+/* 2. ตัวสไลด์ (พื้นหลัง) */
+.slides-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute; /* ทำให้สไลด์ทุกอันซ้อนกัน */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* ตั้งค่ารูปพื้นหลัง */
+    background-size: cover;
+    background-position: center;
+    
+    /* เอฟเฟกต์ Fade */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+    /* ใส่ Overlay มืดๆ เพื่อให้ข้อความอ่านง่ายขึ้น */
+    box-shadow: inset 0 0 0 2000px rgba(63, 63, 63, 0.256); 
+}
+
+.slide.active {
+    opacity: 1; /* โชว์สไลด์ที่ active */
+}
+
+/* 3. เนื้อหาที่ลอยอยู่ด้านบน */
+.hero-content {
+    position: relative; /* ใช้ relative เพื่อให้ลอยอยู่บน z-index ที่สูงกว่าสไลด์ */
+    z-index: 10;
+    color: white;
+    text-align: center;
+    
+    /* จัดให้อยู่กลางจอ */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความ */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.btn {
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* 4. ปุ่ม Navigation */
+.slider-nav button {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* 5. จุด Navigation */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
